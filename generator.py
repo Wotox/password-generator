@@ -11,18 +11,23 @@ def generateString():
     #generating random string with letters
     #_____________________________________
 
-    for i in range(len(alphabet)):
+    step = 0
+    while step <= len(alphabet):
 
         random_index = secrets.randbelow(alphabet_length)
         symbol = alphabet[random_index]
+        
         if secrets.randbelow(1) == 0:
             symbol = symbol.lower()
+
         generated_string += symbol
+        step += 1
 
     #generating random string including numbers
     #__________________________________________
 
-    for i in range(len(generated_string)):
+    step = 0
+    while step <= len(alphabet):
 
         string = ''
 
@@ -34,11 +39,13 @@ def generateString():
 
         for symbol in generated_string:
             string += symbol
+        step += 1
 
     #generating random string including symbols
     #__________________________________________
 
-    for i in range(len(string)):
+    step = 0
+    while step <= len(alphabet):
 
         final_string = ''
 
@@ -53,6 +60,7 @@ def generateString():
 
         for symbol in generated_string:
             final_string += symbol
+        step += 1
 
     return final_string
 
