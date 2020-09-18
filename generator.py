@@ -1,4 +1,4 @@
-import random
+import secrets
 
 
 def generateString():
@@ -13,9 +13,9 @@ def generateString():
 
     for i in range(len(alphabet)):
 
-        random_index = random.randint(0, alphabet_length)
+        random_index = secrets.randbelow(alphabet_length)
         symbol = alphabet[random_index]
-        if random.randint(0,1) == 0:
+        if secrets.randbelow(1) == 0:
             symbol = symbol.lower()
         generated_string += symbol
 
@@ -26,8 +26,8 @@ def generateString():
 
         string = ''
 
-        random_value = str(random.randint(0,9))
-        random_index = random.randint(0, len(generated_string)-1)
+        random_value = str(secrets.randbelow(9))
+        random_index = secrets.randbelow(len(generated_string)-1)
 
         generated_string = list(generated_string)
         generated_string.insert(random_index, random_value)
@@ -43,10 +43,10 @@ def generateString():
         final_string = ''
 
         for symbol in symbols_list:
-            random_value = random.randint(0, len(symbols_list)-1)
+            random_value = secrets.randbelow(len(symbols_list)-1)
             random_symbol = symbols_list[random_value]
 
-        random_index = random.randint(0, len(string)-1)
+        random_index = secrets.randbelow(len(string)-1)
 
         string = list(generated_string)
         generated_string.insert(random_index, random_symbol)
