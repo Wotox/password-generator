@@ -56,5 +56,13 @@ def generateString():
 
     return final_string
 
-while True:
-    print(generateString())
+def main():
+
+    generated_string = generateString()
+    quarter = int(len(generated_string)*0.25-1)
+
+    with open('password.txt', 'w') as password_file:
+        password_file.write(generated_string[0:quarter])
+
+
+main()
